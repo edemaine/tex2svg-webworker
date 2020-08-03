@@ -22,7 +22,7 @@ global.MathJax.config.startup.ready()
 console.log 'hello'
 node = global.MathJax.tex2svg '\\int_0^1 x^2 \, dx',
   display: true
-  #em: argv.em,
-  #ex: argv.ex,
-  #containerWidth: argv.width
+  em: 16
+  ex: 8
+  containerWidth: 80 * 16
 console.log global.MathJax.startup.adaptor.outerHTML node
