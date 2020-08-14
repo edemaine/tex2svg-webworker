@@ -1,7 +1,7 @@
 path = require 'path'
 
 module.exports =
-  mode: 'development'
+  mode: 'production'
   entry: './tex2svg.coffee'
   output:
     path: outputDir = path.resolve __dirname, 'dist'
