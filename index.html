@@ -10,7 +10,7 @@
       worker.onmessage = function(e) {
         var div = document.createElement('div');
         div.className = 'render';
-        div.innerHTML = e.data;
+        div.innerHTML = e.data.svg;
         document.body.appendChild(div);
       };
       function render() {
