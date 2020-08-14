@@ -29,4 +29,4 @@ global.onmessage = (e) ->
   svg = global.MathJax.startup.adaptor.outerHTML node
   .replace /^<mjx-container[^<>]*>/, ''
   .replace /<\/mjx-container>$/, ''
-  postMessage svg
+  postMessage Object.assign e.data, {svg}
