@@ -1,8 +1,8 @@
-## Based roughly on direct/tex2svg from
+## Based roughly on preload/tex2svg from
 ## https://github.com/mathjax/MathJax-demos-node
 
 global.MathJax =
-  tex: packages: 'base, autoload, require, ams, newcommand'
+  tex: packages: ['base', 'autoload', 'require', 'ams', 'newcommand']
   svg: fontCache: 'none'
   startup: typeset: false
 
@@ -19,10 +19,14 @@ global.MathJax.loader.preLoad 'core', 'adaptors/liteDOM', 'input/tex-base',
   '[tex]/all-packages', 'output/svg', 'output/svg/fonts/tex'
 global.MathJax.config.startup.ready()
 
-console.log 'hello'
-node = global.MathJax.tex2svg '\\int_0^1 x^2 \, dx',
-  display: true
-  em: 16
-  ex: 8
-  containerWidth: 80 * 16
-console.log global.MathJax.startup.adaptor.outerHTML node
+global.onmessage = (e) ->
+  {formula, display, em, ex, containerWidth} = e.data
+  node = global.MathJax.tex2svg formula,
+    display: display
+    em: em ? 16
+    ex: ex ? 8
+    containerWidth: containerWidth ? 80 * 16
+  svg = global.MathJax.startup.adaptor.outerHTML node
+  .replace /^<mjx-container[^<>]*>/, ''
+  .replace /<\/mjx-container>$/, ''
+  postMessage svg

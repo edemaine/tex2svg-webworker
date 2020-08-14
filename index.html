@@ -1,3 +1,32 @@
-<script>
-  new Worker('dist/tex2svg.js')
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tex2svg-webworker demo</title>
+    <style>
+     .render { display: inline-block; border: solid; }
+    </style>
+    <script>
+      worker = new Worker('dist/tex2svg.js');
+      worker.onmessage = function(e) {
+        var div = document.createElement('div');
+        div.className = 'render';
+        div.innerHTML = e.data;
+        document.body.appendChild(div);
+      };
+      function render() {
+        worker.postMessage({
+          formula: document.getElementById('formula').value,
+          display: true,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>tex2svg-webworker demo</h1>
+    <form style="display:flex" onSubmit="event.preventDefault(); render()">
+      <textarea id="formula" style="flex-grow: 1">\int_0^1 x^2 \, dx</textarea>
+      <button type="submit">Render</button>
+    </form>
+    <h2>Renders:</h2>
+  </body>
+</html>
