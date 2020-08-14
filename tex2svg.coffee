@@ -2,7 +2,7 @@
 ## https://github.com/mathjax/MathJax-demos-node
 
 global.MathJax =
-  tex: packages: 'base, autoload, require, ams, newcommand'
+  tex: packages: ['base', 'autoload', 'require', 'ams', 'newcommand']
   svg: fontCache: 'none'
   startup: typeset: false
 
