@@ -2,7 +2,9 @@
 ## https://github.com/mathjax/MathJax-demos-node
 
 global.MathJax =
-  tex: packages: ['base', 'autoload', 'require', 'ams', 'newcommand']
+  tex: packages: [
+    'base', 'autoload', 'require', 'ams', 'newcommand', 'textmacros'
+  ]
   svg: fontCache: 'none'
   startup: typeset: false
 
@@ -11,12 +13,13 @@ require 'mathjax-full/components/src/core/core.js'
 require 'mathjax-full/components/src/adaptors/liteDOM/liteDOM.js'
 require 'mathjax-full/components/src/input/tex-base/tex-base.js'
 require 'mathjax-full/components/src/input/tex/extensions/all-packages/all-packages.js'
+require 'mathjax-full/components/src/input/tex/extensions/textmacros/textmacros.js'
 require 'mathjax-full/components/src/output/svg/svg.js'
 require 'mathjax-full/components/src/output/svg/fonts/tex/tex.js'
 require 'mathjax-full/components/src/startup/startup.js'
 
 global.MathJax.loader.preLoad 'core', 'adaptors/liteDOM', 'input/tex-base',
-  '[tex]/all-packages', 'output/svg', 'output/svg/fonts/tex'
+  '[tex]/all-packages', '[tex]/textmacros', 'output/svg', 'output/svg/fonts/tex'
 global.MathJax.config.startup.ready()
 
 global.onmessage = (e) ->
