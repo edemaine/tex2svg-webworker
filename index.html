@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>tex2svg-webworker demo</title>
-    <style>
-     .render { display: inline-block; border: solid; }
-    </style>
-    <script>
-      worker = new Worker('dist/tex2svg.js');
-      worker.onmessage = function(e) {
+<!doctype html><html><head><title>tex2svg-webworker demo</title><style>.render { display: inline-block; border: solid; }
+     .error { border: solid; padding: 1em; }</style><script>function error(e) {
         var div = document.createElement('div');
-        div.className = 'render';
-        div.innerHTML = e.data.svg;
+        div.className = 'error';
+        div.innerHTML = e.toString();
+        if (e.name === 'SecurityError' &&
+            document.location.protocol === 'file:') {
+          div.innerHTML += "<b>You need to open this HTML file from a web server; web workers don't work with <code>file:</code> protocol.</b>";
+        }
         document.body.appendChild(div);
+      }
+      window.onload = function() {
+        try {
+          worker = new Worker('tex2svg.js');
+        } catch (e) {
+          error(e);
+        }
+        worker.onerror = function(e) {
+          error('Failed to load worker');
+        };
+        worker.onmessage = function(e) {
+          var div = document.createElement('div');
+          div.className = 'render';
+          div.innerHTML = e.data.svg;
+          document.body.appendChild(div);
+        };
       };
       function render() {
         worker.postMessage({
           formula: document.getElementById('formula').value,
           display: true,
         });
-      }
-    </script>
-  </head>
-  <body>
-    <h1>tex2svg-webworker demo</h1>
-    <form style="display:flex" onSubmit="event.preventDefault(); render()">
-      <textarea id="formula" style="flex-grow: 1">\int_0^1 x^2 \, dx</textarea>
-      <button type="submit">Render</button>
-    </form>
-    <h2>Renders:</h2>
-  </body>
-</html>
+      }</script><script defer="defer" src="tex2svg.js"></script></head><body><h1>tex2svg-webworker demo</h1><form style="display:flex" onsubmit="event.preventDefault(); render()"><textarea id="formula" style="flex-grow: 1">\int_0^1 x^2 \, dx</textarea> <button type="submit">Render</button></form><h2>Renders:</h2></body></html>
