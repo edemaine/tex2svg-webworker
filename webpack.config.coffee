@@ -9,6 +9,7 @@ module.exports =
   module:
     rules: [
       test: /\.coffee$/
+      exclude: /node_modules/
       loader: 'coffee-loader'
       options:
         bare: true
@@ -17,10 +18,11 @@ module.exports =
     ,
       test: /\.js$/
       exclude: /node_modules/
-      use:
-        loader: 'babel-loader'
-        options:
-          presets: ['@babel/preset-env']
+      loader: 'babel-loader'
+      options:
+        presets: ['@babel/preset-env']
     ]
   plugins: [
+    new (require 'html-webpack-plugin')
+      template: 'index.html'
   ]

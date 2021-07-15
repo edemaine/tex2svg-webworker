@@ -25,6 +25,7 @@
     "babel-loader": "^8.2.2",
     "coffee-loader": "^3.0.0",
     "coffeescript": "^2.5.1",
+    "html-webpack-plugin": "^5.3.2",
     "mathjax-full": "^3.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.44.0",
