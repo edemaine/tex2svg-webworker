@@ -2,7 +2,6 @@
 ## https://github.com/mathjax/MathJax-demos-node
 
 global.MathJax =
-  options: enableAssistiveMml: false
   tex: packages: [
     'base', 'autoload', 'require', 'ams', 'newcommand', 'textmacros'
   ]

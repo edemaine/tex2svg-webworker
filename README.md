@@ -21,7 +21,7 @@ but built to be used as a Web Worker `.js` file.
   ```js
   worker = new Worker(window.URL.createObjectURL(new Blob([
     "importScripts('https://cdn.jsdelivr.net/npm/tex2svg-webworker/dist/tex2svg.js');"
-    // or specify a specific version via .../npm/tex2svg-webworker@0.1.1/dist/...
+    // or specify a specific version via .../npm/tex2svg-webworker@0.3.1/dist/...
   ], type: 'text/javascript'));
    worker.onmessage = function(e) {
      // e.data.svg is a string of the form "<svg...>...</svg>"
