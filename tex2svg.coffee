@@ -2,10 +2,11 @@
 ## https://github.com/mathjax/MathJax-demos-node
 
 global.MathJax =
+  options: enableAssistiveMml: false
   tex: packages: [
     'base', 'autoload', 'require', 'ams', 'newcommand', 'textmacros'
   ]
-  svg: fontCache: 'none'
+  svg: fontCache: 'local'
   startup: typeset: false
 
 require 'mathjax-full/components/src/startup/lib/startup.js'
