@@ -6,7 +6,10 @@ global.MathJax =
     'base', 'autoload', 'require', 'ams', 'newcommand', 'textmacros'
   ]
   svg: fontCache: 'local'
-  startup: typeset: false
+  startup:
+    # Prevent MathJax from looking at document, sometimes available to Worker
+    document: ''
+    typeset: false
 
 require 'mathjax-full/components/src/startup/lib/startup.js'
 require 'mathjax-full/components/src/core/core.js'
@@ -24,6 +27,7 @@ global.MathJax.config.startup.ready()
 
 global.onmessage = (e) ->
   {formula, display, em, ex, containerWidth} = e.data
+  return unless formula?
   node = global.MathJax.tex2svg formula,
     display: display
     em: em ? 16
