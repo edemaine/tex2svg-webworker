@@ -26,3 +26,6 @@ module.exports =
     new (require 'html-webpack-plugin')
       template: 'index.html'
   ]
+  ## For testing:
+  #mode: 'development'
+  #optimization: usedExports: true

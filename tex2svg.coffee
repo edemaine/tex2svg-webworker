@@ -4,6 +4,7 @@
 global.MathJax =
   tex: packages: [
     'base', 'autoload', 'require', 'ams', 'newcommand', 'textmacros'
+    'noerrors', 'noundefined'
   ]
   svg: fontCache: 'local'
   startup:
@@ -22,7 +23,9 @@ require 'mathjax-full/components/src/output/svg/fonts/tex/tex.js'
 require 'mathjax-full/components/src/startup/startup.js'
 
 global.MathJax.loader.preLoad 'core', 'adaptors/liteDOM', 'input/tex-base',
-  '[tex]/all-packages', '[tex]/textmacros', 'output/svg', 'output/svg/fonts/tex'
+  '[tex]/all-packages', '[tex]/textmacros',
+  '[tex]/noerrors', '[tex]/noundefined',
+  'output/svg', 'output/svg/fonts/tex'
 global.MathJax.config.startup.ready()
 
 global.onmessage = (e) ->
