@@ -18,7 +18,7 @@
   "homepage": "https://github.com/edemaine/tex2svg-webworker",
   "scripts": {
     "prepare": "webpack",
-    "gh-pages": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
