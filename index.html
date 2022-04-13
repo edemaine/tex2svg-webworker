@@ -5,6 +5,8 @@
     <style>
      .render { display: inline-block; border: solid; }
      .error { border: solid; padding: 1em; }
+     /* LaTeX errors get rendered with these rects as background: */
+     rect[data-background="true"] { fill: #f88; cursor: help; }
     </style>
     <script>
       function error(e) {
