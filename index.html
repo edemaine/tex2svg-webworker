@@ -1,5 +1,7 @@
 <!doctype html><html><head><title>tex2svg-webworker demo</title><style>.render { display: inline-block; border: solid; }
-     .error { border: solid; padding: 1em; }</style><script>function error(e) {
+     .error { border: solid; padding: 1em; }
+     /* LaTeX errors get rendered with these rects as background: */
+     rect[data-background="true"] { fill: #f88; cursor: help; }</style><script>function error(e) {
         var div = document.createElement('div');
         div.className = 'error';
         div.innerHTML = e.toString();
