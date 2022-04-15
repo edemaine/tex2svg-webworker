@@ -12,15 +12,15 @@ global.MathJax =
     document: ''
     typeset: false
 
-require 'mathjax-full/components/src/startup/lib/startup.js'
-require 'mathjax-full/components/src/core/core.js'
-require 'mathjax-full/components/src/adaptors/liteDOM/liteDOM.js'
-require 'mathjax-full/components/src/input/tex-base/tex-base.js'
-require 'mathjax-full/components/src/input/tex/extensions/all-packages/all-packages.js'
-require 'mathjax-full/components/src/input/tex/extensions/textmacros/textmacros.js'
-require 'mathjax-full/components/src/output/svg/svg.js'
-require 'mathjax-full/components/src/output/svg/fonts/tex/tex.js'
-require 'mathjax-full/components/src/startup/startup.js'
+import 'mathjax-full/components/src/startup/lib/startup.js'
+import 'mathjax-full/components/src/core/core.js'
+import 'mathjax-full/components/src/adaptors/liteDOM/liteDOM.js'
+import 'mathjax-full/components/src/input/tex-base/tex-base.js'
+import 'mathjax-full/components/src/input/tex/extensions/all-packages/all-packages.js'
+import 'mathjax-full/components/src/input/tex/extensions/textmacros/textmacros.js'
+import 'mathjax-full/components/src/output/svg/svg.js'
+import 'mathjax-full/components/src/output/svg/fonts/tex/tex.js'
+import 'mathjax-full/components/src/startup/startup.js'
 
 global.MathJax.loader.preLoad 'core', 'adaptors/liteDOM', 'input/tex-base',
   '[tex]/all-packages', '[tex]/textmacros',
