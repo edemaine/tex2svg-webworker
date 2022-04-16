@@ -108,7 +108,7 @@ On the other hand, the following packages are not currently included:
 * [action](https://docs.mathjax.org/en/latest/input/tex/extensions/action.html) (MathML irrelevant for SVG output)
 * [autoload](https://docs.mathjax.org/en/latest/input/tex/extensions/autoload.html) (irrelevant for Web Worker)
 * [bbox](https://docs.mathjax.org/en/latest/input/tex/extensions/bbox.html) (use more standard `\colorbox{$...$}` instead)
-* [cases](https://docs.mathjax.org/en/latest/input/tex/extensions/cases.html) (tags aren't great in SVG output),
+* [cases](https://docs.mathjax.org/en/latest/input/tex/extensions/cases.html) (tags aren't great in SVG output)
 * [configmacros](https://docs.mathjax.org/en/latest/input/tex/extensions/configmacros.html) (irrelevant for Web Worker)
 * [empheq](https://docs.mathjax.org/en/latest/input/tex/extensions/empheq.html) (seems rarely used)
 * [enclose](https://docs.mathjax.org/en/latest/input/tex/extensions/enclose.html) (MathML irrelevant for SVG output)
