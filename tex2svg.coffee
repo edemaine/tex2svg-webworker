@@ -65,7 +65,7 @@ html = mathjax.document '',
   InputJax: tex
   OutputJax: svg
 
-global.onmessage = (e) ->
+globalThis.onmessage = (e) ->
   {formula, display, em, ex, containerWidth} = e.data
   return unless formula?
   node = html.convert formula,
