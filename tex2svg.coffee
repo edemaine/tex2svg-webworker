@@ -46,20 +46,6 @@ import 'mathjax-full/js/input/tex/upgreek/UpgreekConfiguration.js'
 #import 'mathjax-full/js/input/tex/unicode/UnicodeConfiguration.js'
 import 'mathjax-full/js/input/tex/verb/VerbConfiguration.js'
 
-global.MathJax =
-  tex:
-    packages: [
-      'base', 'ams', 'amscd', 'boldsymbol', 'braket', 'bussproofs', 'cancel'
-      'centernot', 'color', 'colortbl', 'gensymb', 'mathtools', 'mhchem'
-      'newcommand', 'noerrors', 'noundefined', 'physics', 'setoptions'
-      'textcomp', 'textmacros', 'upgreek', 'unicode', 'verb'
-    ]
-  svg: fontCache: 'local'
-  startup:
-    # Prevent MathJax from looking at document, sometimes available to Worker
-    document: ''
-    typeset: false
-
 ## Create DOM adaptor and register it for HTML documents
 adaptor = liteAdaptor()
 RegisterHTMLHandler adaptor
