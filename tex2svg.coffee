@@ -37,7 +37,7 @@ import 'mathjax-full/js/input/tex/mhchem/MhchemConfiguration.js'
 import 'mathjax-full/js/input/tex/newcommand/NewcommandConfiguration.js'
 import 'mathjax-full/js/input/tex/noerrors/NoErrorsConfiguration.js'
 import 'mathjax-full/js/input/tex/noundefined/NoUndefinedConfiguration.js'
-import 'mathjax-full/js/input/tex/physics/PhysicsConfiguration.js'
+#import 'mathjax-full/js/input/tex/physics/PhysicsConfiguration.js'
 import 'mathjax-full/js/input/tex/setoptions/SetOptionsConfiguration.js'
 #import 'mathjax-full/js/input/tex/tagformat/TagFormatConfiguration.js'
 import 'mathjax-full/js/input/tex/textcomp/TextcompConfiguration.js'
@@ -56,7 +56,7 @@ tex = new TeX
   packages: [
     'base', 'ams', 'amscd', 'boldsymbol', 'braket', 'bussproofs', 'cancel'
     'centernot', 'color', 'colortbl', 'gensymb', 'mathtools', 'mhchem'
-    'newcommand', 'noerrors', 'noundefined', 'physics', 'setoptions'
+    'newcommand', 'noerrors', 'noundefined', 'setoptions'
     'textcomp', 'textmacros', 'upgreek', 'unicode', 'verb'
   ]
 svg = new SVG

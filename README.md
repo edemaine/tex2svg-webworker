@@ -92,7 +92,6 @@ this library includes several of
 * [newcommand](https://docs.mathjax.org/en/latest/input/tex/extensions/newcommand.html): `\def`, `\newcommand`, `\newenvironment` (note that these span across multiple expressions)
 * [noerrors](https://docs.mathjax.org/en/latest/input/tex/extensions/noerrors.html): render source in case of error
 * [noundefined](https://docs.mathjax.org/en/latest/input/tex/extensions/noundefined.html): show undefined commands in red instead of throwing error
-* [physics](https://docs.mathjax.org/en/latest/input/tex/extensions/physics.html): `\abs{x-y}`, etc.
 * [setoptions](https://docs.mathjax.org/en/latest/input/tex/extensions/setoptions.html): `\setOptions{tagSide=left}`, etc.
 * [textcomp](https://docs.mathjax.org/en/latest/input/tex/extensions/textcomp.html): `\textasciitilde`, etc.
 * [textmacros](https://docs.mathjax.org/en/latest/input/tex/extensions/textmacros.html): `\text{$x$ is \emph{good}}`
@@ -115,5 +114,6 @@ On the other hand, the following packages are not currently included:
 * [extpfeil](https://docs.mathjax.org/en/latest/input/tex/extensions/extpfeil.html) (not standard LaTeX)
 * [html](https://docs.mathjax.org/en/latest/input/tex/extensions/html.html) (incompatible with SVG output)
 * [require](https://docs.mathjax.org/en/latest/input/tex/extensions/require.html) (irrelevant for Web Worker)
+* [physics](https://docs.mathjax.org/en/latest/input/tex/extensions/physics.html) (redefines e.g. `\div` to mean ∇ (`\grad`) instead of ÷)
 * [tagformat](https://docs.mathjax.org/en/latest/input/tex/extensions/tagformat.html) (irrelevant for Web Worker)
 * [unicode](https://docs.mathjax.org/en/latest/input/tex/extensions/unicode.html) (doesn't work well with SVG)
