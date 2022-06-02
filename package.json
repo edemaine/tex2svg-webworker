@@ -1,6 +1,6 @@
 {
   "name": "tex2svg-webworker",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Convert LaTeX to SVG via Web Worker",
   "repository": {
     "type": "git",
