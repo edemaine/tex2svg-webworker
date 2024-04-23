@@ -26,7 +26,7 @@
     "babel-loader": "8.2.5",
     "coffee-loader": "4.0.0",
     "coffeescript": "2.7.0",
-    "gh-pages": "4.0.0",
+    "gh-pages": "5.0.0",
     "html-webpack-plugin": "5.5.0",
     "mathjax-full": "3.2.0",
     "webpack": "5.73.0",
